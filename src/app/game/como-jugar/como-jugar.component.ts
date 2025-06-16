@@ -14,6 +14,7 @@ export class ComoJugarComponent {
   constructor(public translate: TranslateService) {
   }
 
+  // redirección
 scrollTo(id: string) {
   const el = document.getElementById(id);
   if (el) {

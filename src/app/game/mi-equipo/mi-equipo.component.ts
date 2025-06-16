@@ -67,6 +67,7 @@ export class MiEquipoComponent implements OnInit {
       }
     });
 
+//gets de toda la información
     this.equipoService.getPresupuesto().subscribe({
       next: (data) => this.presupuesto = data.presupuesto,
       error: (err) => {

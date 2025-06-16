@@ -66,6 +66,7 @@ export class LoginComponent implements OnInit {
     this.translate.use(lang);
   }
 
+  // guarda la cookie de inicio de sesión para meterla en todas las peticiones después
   getCookie(name: string): string | null {
     const cookies = document.cookie.split(';');
     for (let cookie of cookies) {

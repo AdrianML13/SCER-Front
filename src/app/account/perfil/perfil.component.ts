@@ -136,6 +136,7 @@ export class PerfilComponent {
     });
   }
 
+  // pide contraseña
   cambiarAdmin() {
     if (this.esAdmin) {
       this.userService.toggleAdmin({}).subscribe({

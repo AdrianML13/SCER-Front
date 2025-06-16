@@ -148,7 +148,7 @@ export class RegisterComponent implements OnInit {
       });
     }
   }
-
+// guarda la cookie de inicio de sesión para meterla en todas las peticiones después, por que al registrarte te inicia sesión automatico
   getCookie(name: string): string | null {
     const cookies = document.cookie.split(';');
     for (let cookie of cookies) {

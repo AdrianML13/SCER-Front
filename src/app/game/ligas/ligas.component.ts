@@ -95,6 +95,7 @@ export class LigasComponent implements OnInit {
       next: (misLigasData) => {
         this.misLigas = misLigasData;
         this.ligasService.obtenerTodasLigas().subscribe({
+          //confirma que ya participa
           next: (todasLigasData) => {
             this.todasLigas = todasLigasData.map(liga => {
               const yaEstoy = this.misLigas.some(mia => mia.liga === liga.id);
@@ -233,6 +234,7 @@ export class LigasComponent implements OnInit {
     this.obtenerParticipantes();
   }
 
+  //llama al service para obtener la clasificación general de los usuarios
   obtenerClasificacionGeneral() {
     this.rallyService.getClasificacionGeneral().subscribe({
       next: (data) => {

@@ -6,6 +6,7 @@ import { HttpClient } from '@angular/common/http';
 export const csrfInterceptor: HttpInterceptorFn = (req: HttpRequest<any>, next: HttpHandlerFn): Observable<HttpEvent<any>> => {
   const csrfToken = getCookie('csrftoken');
 
+  // agrega un token a cada petición
   if (csrfToken && req.method !== 'GET') {
     const cloned = req.clone({
       headers: req.headers.set('X-CSRFToken', csrfToken),

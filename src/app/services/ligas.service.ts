@@ -62,7 +62,4 @@ export class LigasService {
       withCredentials: true
     });
   }
-
-
-
 }

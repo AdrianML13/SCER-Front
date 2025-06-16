@@ -95,6 +95,7 @@ export class MercadoComponent implements OnInit {
     }
   }
 
+  //carga cada pestaña
   cargarMercadoFiltrado() {
     let misPilotosIds: number[] = [];
     let misCopilotosIds: number[] = [];
@@ -128,6 +129,7 @@ export class MercadoComponent implements OnInit {
   cargarHistorialElemento() {
     if (!this.elementoSeleccionado || !this.tipoSeleccionado) return;
 
+    //obtiene el historico del elemento
     let request;
     if (this.tipoSeleccionado === 'piloto') {
       request = this.rallyService.getHistoricoPiloto(this.elementoSeleccionado.id);

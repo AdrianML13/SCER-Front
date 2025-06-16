@@ -25,8 +25,9 @@ export class LigaDetalleComponent implements OnInit {
     this.ligaId = this.route.snapshot.paramMap.get('id');
 
     if (this.ligaId) {
+      //Se llama al servicio ligasService para obtener la lista de participantes de la liga con el id correspondiente
       this.ligasService.obtenerParticipantes(+this.ligaId).subscribe((data) => {
-        // Ordenamos de mayor a menor
+        // Ordena de mayor a menor
         const ordenados = data.sort((a: any, b: any) => b.puntos - a.puntos);
 
         let posicion = 1;
