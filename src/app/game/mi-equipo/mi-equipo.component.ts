@@ -34,14 +34,8 @@ export class MiEquipoComponent implements OnInit {
     private translate: TranslateService
   ) {}
 
-  ngOnInit(): void {
-    const token = localStorage.getItem('token');
-
-    if (!token) {
-      this.error = this.translate.instant('team.tokenNotFound');
-      return;
-    }
-
+  
+ngOnInit(): void {
     this.userService.getPerfil().subscribe({
       next: (perfil) => {
         this.usuarioUsername = perfil.username;
@@ -66,6 +60,9 @@ export class MiEquipoComponent implements OnInit {
         this.error = this.translate.instant('team.profileLoadError');
       }
     });
+
+    // El resto de tu código continúa igual
+
 
 //gets de toda la información
     this.equipoService.getPresupuesto().subscribe({
